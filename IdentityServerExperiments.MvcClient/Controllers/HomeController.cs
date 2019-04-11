@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServerExperiments.MvcClient.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityServerExperiments.MvcClient.Controllers
 {
@@ -16,6 +17,12 @@ namespace IdentityServerExperiments.MvcClient.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Secure()
         {
             return View();
         }
