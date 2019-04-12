@@ -9,4 +9,11 @@
     <PackageReference Include="IdentityServer4" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Settings\" />
+  </ItemGroup>
+
 </Project>
