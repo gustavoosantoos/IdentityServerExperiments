@@ -8,7 +8,8 @@ namespace IdentityServerExperiments.Entities
 {
     public class Usuario
     {
-        public Guid Id { get; private set; }
+        public string SubjectId { get; private set; }
+        public string Username { get; private set; }
         public string Password { get; private set; }
         public List<Claim> Claims { get; private set; }
     }

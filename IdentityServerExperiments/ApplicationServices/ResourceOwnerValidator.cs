@@ -29,7 +29,7 @@ namespace IdentityServerExperiments.ApplicationServices
                         if (context.Password == user.Password)
                         {
                             context.Result = new GrantValidationResult(
-                                subject: user.Id.ToString(),
+                                subject: user.SubjectId,
                                 authenticationMethod: "custom",
                                 claims: user.Claims
                             );

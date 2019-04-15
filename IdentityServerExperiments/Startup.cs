@@ -20,11 +20,9 @@ namespace IdentityServerExperiments
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
                 //.AddTestUsers(Config.GetUsers())
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryApiResources(Config.GetApiResources())
-                //.AddInMemoryClients(Config.GetClients());
-                .AddResourceStore<ResourceStore>()
-                .AddClientStore<ClientStore>()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())
                 .AddProfileService<ProfileService>()
                 .AddResourceOwnerValidator<ResourceOwnerValidator>();
         }
