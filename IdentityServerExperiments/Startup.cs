@@ -18,14 +18,10 @@ namespace IdentityServerExperiments
 
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
-                //.AddTestUsers(Config.GetUsers())
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryApiResources(Config.GetApiResources())
-                //.AddInMemoryClients(Config.GetClients())
-                .AddResourceStore<ResourceStore>()
-                .AddClientStore<ClientStore>()
-                .AddProfileService<ProfileService>()
-                .AddResourceOwnerValidator<ResourceOwnerValidator>();
+                .AddTestUsers(Config.GetUsers())
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients());
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

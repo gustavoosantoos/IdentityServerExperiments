@@ -6,14 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityServer4" Version="2.4.0" />
+    <Compile Remove="Dtos\**" />
+    <Compile Remove="Repositories\**" />
+    <Compile Remove="Settings\**" />
+    <Content Remove="Dtos\**" />
+    <Content Remove="Repositories\**" />
+    <Content Remove="Settings\**" />
+    <EmbeddedResource Remove="Dtos\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Dtos\**" />
+    <None Remove="Repositories\**" />
+    <None Remove="Settings\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Dtos\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Settings\" />
+    <PackageReference Include="IdentityServer4" Version="2.4.0" />
   </ItemGroup>
 
 </Project>

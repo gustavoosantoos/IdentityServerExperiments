@@ -54,7 +54,8 @@ namespace IdentityServerExperiments
                     ClientId = "test",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("test".Sha256()) },
-                    AllowedScopes = { "ResourceApi" }
+                    AllowedScopes = { "ResourceApi" },
+                    RequireConsent = false
                 },
 
                 //Resource Owner grant-type is more indicated for WebApps, SPAs and apps user-to-machine

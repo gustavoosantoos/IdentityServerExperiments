@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerExperiments.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerExperiments.Client", "IdentityServerExperiments.Client\IdentityServerExperiments.Client.csproj", "{93F72E9F-8AC3-4227-94C6-F76425516FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerExperiments.MvcClient", "IdentityServerExperiments.MvcClient\IdentityServerExperiments.MvcClient.csproj", "{FD8C80BE-6201-452B-9531-6937CA637810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerExperiments.MvcClient", "IdentityServerExperiments.MvcClient\IdentityServerExperiments.MvcClient.csproj", "{FD8C80BE-6201-452B-9531-6937CA637810}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{AC956333-21E0-474D-9093-C7076BA272AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clientes and Resources", "Clientes and Resources", "{9B48C1F1-3856-4B83-9CA5-BB46270D369D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9BCEDA8-F041-49D4-9DA4-EC7939700BA8} = {AC956333-21E0-474D-9093-C7076BA272AC}
+		{C6271A2B-4F42-450A-A87D-7B480537273D} = {9B48C1F1-3856-4B83-9CA5-BB46270D369D}
+		{93F72E9F-8AC3-4227-94C6-F76425516FD1} = {9B48C1F1-3856-4B83-9CA5-BB46270D369D}
+		{FD8C80BE-6201-452B-9531-6937CA637810} = {9B48C1F1-3856-4B83-9CA5-BB46270D369D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB6FE98C-30E3-4FF5-95C3-3E8351F2B125}
