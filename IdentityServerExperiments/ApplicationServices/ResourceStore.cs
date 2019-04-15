@@ -26,6 +26,6 @@ namespace IdentityServerExperiments.ApplicationServices
             => await _repository.GetIdentityResourcesAsync();
 
         public async Task<Resources> GetAllResourcesAsync()
-            => await _repository.GetallResourcesAsync();
+            => await _repository.GetAllResourcesAsync();
     }
 }

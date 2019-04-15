@@ -23,7 +23,7 @@ namespace IdentityServerExperiments.Repositories
         public async Task<List<IdentityResource>> GetIdentityResourcesAsync() 
             => await Task.FromResult(GetIdentityResources());
 
-        public async Task<Resources> GetallResourcesAsync()
+        public async Task<Resources> GetAllResourcesAsync()
             => await Task.FromResult(new Resources(GetIdentityResources(), GetApiResources()));
 
 
