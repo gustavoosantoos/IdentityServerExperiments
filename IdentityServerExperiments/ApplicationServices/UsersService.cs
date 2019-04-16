@@ -1,4 +1,6 @@
-﻿using IdentityServerExperiments.Entities;
+﻿using IdentityServer4.Models;
+using IdentityServerExperiments.Entities;
+using IdentityServerExperiments.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +10,22 @@ namespace IdentityServerExperiments.ApplicationServices
 {
     public class UsersService
     {
-        public bool ValidateCredentials(string username, string password)
+        private readonly UsersRepository _repository;
+
+        public UsersService(UsersRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
         }
 
-        public Usuario FindByUsername(string username)
+        public async Task<bool> ValidateCredentials(string username, string password)
         {
-            throw new NotImplementedException();
+            var user = await FindByUsername(username);
+            return user != null && user.Password == password.Sha256();
+        }
+
+        public async Task<Usuario> FindByUsername(string username)
+        {
+            return await _repository.FindByUsernameAsync(username);
         }
     }
 }

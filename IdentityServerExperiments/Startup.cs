@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IdentityServerExperiments.ApplicationServices;
+using IdentityServerExperiments.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,9 @@ namespace IdentityServerExperiments
                 .AddInMemoryClients(Config.GetClients())
                 .AddProfileService<ProfileService>()
                 .AddResourceOwnerValidator<ResourceOwnerValidator>();
+
+            services.AddScoped<UsersRepository>();
+            services.AddScoped<UsersService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -20,9 +20,9 @@ namespace IdentityServerExperiments.ApplicationServices
         public async Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
             var userId = context.Subject.Claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Subject);
-            if (userId != null && Guid.TryParse(userId.Value, out var parsedId))
+            if (userId != null && !string.IsNullOrEmpty(userId.Value))
             {
-                var user = await _repository.FindByIdAsync(parsedId);
+                var user = await _repository.FindByIdAsync(userId.Value);
                 if (user != null)
                     context.IssuedClaims = user.Claims;
             }
@@ -31,8 +31,8 @@ namespace IdentityServerExperiments.ApplicationServices
         public async Task IsActiveAsync(IsActiveContext context)
         {
             var userId = context.Subject.Claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Subject);
-            if (userId != null && Guid.TryParse(userId.Value, out var parsedId))
-                context.IsActive = (await _repository.FindByIdAsync(parsedId)) != null;
+            if (userId != null && !string.IsNullOrEmpty(userId.Value))
+                context.IsActive = (await _repository.FindByIdAsync(userId.Value)) != null;
         }
     }
 }

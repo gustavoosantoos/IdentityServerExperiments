@@ -21,9 +21,9 @@ namespace IdentityServerExperiments.ApplicationServices
             try
             {
                 var userId = context.Request.Subject.Claims.FirstOrDefault(c => c.Type == JwtClaimTypes.Subject);
-                if (userId != null && Guid.TryParse(userId.Value, out var parsedId))
+                if (userId != null && !string.IsNullOrEmpty(userId.Value))
                 {
-                    var user = await _repository.FindByIdAsync(parsedId);
+                    var user = await _repository.FindByIdAsync(userId.Value);
                     if (user != null)
                     {
                         if (context.Password == user.Password)
