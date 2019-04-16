@@ -24,7 +24,7 @@ namespace IdentityServerExperiments.ApplicationServices
             {
                 var user = await _repository.FindByIdAsync(userId.Value);
                 if (user != null)
-                    context.IssuedClaims = user.Claims;
+                    context.IssuedClaims = user.StandartClaims;
             }
         }
 

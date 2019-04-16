@@ -31,7 +31,7 @@ namespace IdentityServerExperiments.ApplicationServices
                             context.Result = new GrantValidationResult(
                                 subject: user.SubjectId,
                                 authenticationMethod: "custom",
-                                claims: user.Claims
+                                claims: user.StandartClaims
                             );
                         }
                     }
