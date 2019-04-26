@@ -44,9 +44,9 @@ namespace IdentityServerExperiments.ResourceApi
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
-            app.UseRouting(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapControllers();
+                endpoints.MapControllers();
             });
         }
     }
